@@ -1,0 +1,30 @@
+{
+   "about": "We are a creative technical agency who build all manor of lovely digital things.",
+   "description": "Made is a creatively focused web development agency based in London. We produce award winning work for a variety of platforms, including web, mobile and in-store, using cutting-edge technology and best practice techniques. Our comprehensive range of services enable us to deliver projects of all shapes and sizes, from small interactive experiences to global multi-platform e-commerce solutions.\n\nAt Made we like to think that that we\u2019re a bit different to traditional development agencies. We value design and interaction, and believe both are critical to a project\u2019s success. We don\u2019t talk jargon and we have a flexible process in place because every project is different and sometimes requirements do change. Our agnostic approach to technology means that we will only choose and suggest technologies that are right for the job.\n\nSome of our recent projects include:\n\nhttp://www.dalziel-pow.com\nhttp://www.byronhamburgers.com\nhttp://www.lacostechampionship.com\nhttp://www.speirsandmajor.com\nhttp://www.xfactorkaraoke.com\nhttp://www.bibliothequedesign.com\nhttp://www.pickmix.co.uk\nhttp://home.luckyvoice.com",
+   "founded": "2008",
+   "is_published": true,
+   "location": {
+      "street": "Unit 309, 30 Great Guildford Street",
+      "city": "London",
+      "state": "",
+      "country": "United Kingdom",
+      "zip": "SE1 0HS",
+      "latitude": 51.504574510956,
+      "longitude": -0.097021376292972
+   },
+   "phone": "+44 (0)20 7729 5900",
+   "talking_about_count": 11,
+   "username": "made.development",
+   "website": "http://www.madebymade.co.uk",
+   "were_here_count": 2,
+   "category": "Computers/technology",
+   "id": "87814228220",
+   "name": "Made, Creative Development",
+   "link": "https://www.facebook.com/made.development",
+   "likes": 780,
+   "cover": {
+      "cover_id": "10151354132973221",
+      "source": "http://sphotos-h.ak.fbcdn.net/hphotos-ak-prn1/s720x720/19291_10151354132973221_2142849333_n.jpg",
+      "offset_y": 34
+   }
+}
