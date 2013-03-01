@@ -1,4 +1,5 @@
 require "social/engine"
+require "twitter"
 
 module Social
   class Engine < Rails::Engine
