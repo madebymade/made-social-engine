@@ -2,6 +2,18 @@ require "social/engine"
 require "twitter"
 
 module Social
+  mattr_accessor :cache_sweeper
+  @@cache_sweeper = false
+
+  mattr_accessor :tweet_store_count
+  @@tweet_store_count = 10
+
+  mattr_accessor :twitter_consumer_key
+  @@twitter_consumer_key = ''
+
+  mattr_accessor :twitter_consumer_secret
+  @@twitter_consumer_secret = ''
+
   class Engine < Rails::Engine
     isolate_namespace Social
 
@@ -11,10 +23,7 @@ module Social
   end
 
   def self.config(&block)
-    @@config ||= Social::Engine::Configuration.new
-
-    yield @@config if block
-
-    return @@config
+    yield self if block
+    return self
   end
 end
