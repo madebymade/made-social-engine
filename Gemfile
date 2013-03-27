@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 gemspec
 
-gem 'twitter', '4.5.0'
+gem 'twitter', '4.6.2'
 gem 'koala',   '1.6.0'
 
 group :test do

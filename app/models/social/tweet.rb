@@ -22,7 +22,18 @@ module Social
     end
 
     def self.fetch_tweets(username, user_id)
-      Twitter.user_timeline(username).each do |tweet|
+      client = Twitter::Client.new(
+        :consumer_key => Social.config.twitter_consumer_key,
+        :consumer_secret => Social.config.twitter_consumer_secret,
+        :oauth_token => Social.config.twitter_access_token,
+        :oauth_token_secret => Social.config.twitter_access_secret
+      )
+
+      options = {
+        :include_rts => false
+      }
+
+      client.user_timeline(username, options).each do |tweet|
         begin
           tweet_obj = Tweet.where(:text => tweet.text,
                                   :tweeted_at => tweet.created_at,
@@ -37,8 +48,7 @@ module Social
     end
 
     def self.delete_old_tweets(user_id)
-      Tweet.where('twitter_user_id = ? ', user_id).offset(Social.config.tweet_store_count)
-        .each { |tweet| tweet.delete }
+      Tweet.where('twitter_user_id = ? ', user_id).offset(Social.config.tweet_store_count).each { |tweet| tweet.delete }
     end
   end
 end

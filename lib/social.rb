@@ -14,6 +14,12 @@ module Social
   mattr_accessor :twitter_consumer_secret
   @@twitter_consumer_secret = ''
 
+  mattr_accessor :twitter_access_token
+  @@twitter_access_token = ''
+
+  mattr_accessor :twitter_access_secret
+  @@twitter_access_secret = ''
+
   class Engine < Rails::Engine
     isolate_namespace Social
 
