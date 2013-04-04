@@ -10,7 +10,7 @@ if defined?(ActiveAdmin)
         f.input :username
       end
 
-      f.buttons
+      f.actions
     end
 
     index do
