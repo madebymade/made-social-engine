@@ -27,7 +27,7 @@ module Social
       Tweet.fetch_tweets(username, id)
     end
 
-    def self.get_tweets
+    def self.get_all_tweets
       TwitterUser.all.each do |twitter_user|
         TwitterUser.get_user_tweets(twitter_user.username, twitter_user.id)
       end
