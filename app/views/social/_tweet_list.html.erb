@@ -1,0 +1,12 @@
+<div>
+  <%= user.username %>
+
+  <ul>
+    <% user.tweets.limit(number).each do |tweet| %>
+    <li>
+      <%= auto_link(tweet.text).html_safe %>
+      <%= tweet.tweeted_at %>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,8 +1,9 @@
 source "http://rubygems.org"
 gemspec
 
-gem 'twitter', '4.6.2'
-gem 'koala',   '1.6.0'
+gem 'twitter',      '4.6.2'
+gem 'twitter_text', '1.7.0'
+gem 'koala',        '1.6.0'
 
 group :test do
   gem 'brakeman'
