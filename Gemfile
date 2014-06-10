@@ -4,7 +4,7 @@ gemspec
 gem 'twitter',      '4.6.2'
 gem 'twitter-text', '1.7.0'
 gem 'koala',        '1.6.0'
-gem 'instagram',    '1.1.0'
+gem 'instagram',    '1.1.1'
 
 group :test do
   gem 'brakeman'

@@ -1,5 +1,6 @@
 require "social/engine"
 require "twitter"
+require "instagram"
 
 module Social
   mattr_accessor :cache_sweeper

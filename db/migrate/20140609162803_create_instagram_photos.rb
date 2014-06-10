@@ -11,8 +11,7 @@ class CreateInstagramPhotos < ActiveRecord::Migration
       t.boolean :offensive, :default => false
     end
 
-    add_index :social_instagram_photos, :photo_id
-    add_index :social_instagram_photos, :photo_created_at
+    add_index :social_instagram_photos, :instagram_hashtag_id
     add_index :social_instagram_photos, :offensive
   end
 end

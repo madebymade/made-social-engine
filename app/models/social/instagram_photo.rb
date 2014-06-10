@@ -1,3 +1,5 @@
+require 'instagram'
+
 module Social
   class InstagramPhoto < ActiveRecord::Base
     NUM_PHOTOS_STORE = 6

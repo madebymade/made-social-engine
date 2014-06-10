@@ -78,7 +78,7 @@ GEM
     highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.9)
-    instagram (1.1.0)
+    instagram (1.1.1)
       faraday (>= 0.7, < 0.10)
       faraday_middleware (>= 0.8, < 0.10)
       hashie (>= 0.4.0)
@@ -190,7 +190,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl
   factory_girl_rails
-  instagram (= 1.1.0)
+  instagram (= 1.1.1)
   koala (= 1.6.0)
   rspec-rails
   social!
