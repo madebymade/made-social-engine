@@ -1,6 +1,8 @@
+require 'twitter-text'
+
 module Social
   module ApplicationHelper
-    include ::Twitter::Autolink
+    include Twitter::Autolink
 
     def latest_tweets(username, number = 10)
       user = Social::TwitterUser.find_by_username(username)
