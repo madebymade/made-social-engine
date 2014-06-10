@@ -38,7 +38,8 @@ module Social
     end
 
     it "should fetch the photos for a given hashtag" do
-      InstagramPhoto.get_hashtag_photos('ryvita', 1)
+      hashtag = FactoryGirl.create(:instagram_hashtag)
+      InstagramPhoto.get_hashtag_photos(hashtag)
       expect(InstagramPhoto.where(:instagram_hashtag_id => 1).count).to eq 20
     end
   end

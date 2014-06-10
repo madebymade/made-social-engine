@@ -21,6 +21,9 @@ module Social
   mattr_accessor :twitter_access_secret
   @@twitter_access_secret = ''
 
+  mattr_accessor :instagram_display_count
+  @@instagram_client_id = ''
+
   mattr_accessor :instagram_client_id
   @@instagram_client_id = ''
 

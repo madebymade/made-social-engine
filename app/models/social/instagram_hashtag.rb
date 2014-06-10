@@ -3,24 +3,22 @@ module Social
     attr_accessible       :hashtag
 
     has_many              :photos,
-                          :dependent => :destroy
+                          :dependent => :destroy,
+                          :class_name => "Social::InstagramPhoto"
 
     validates             :hashtag,
-                          :presence => true
+                          :presence => true,
+                          :uniqueness => true
 
     after_save            :update_photos
 
-    def photos
-      InstagramPhoto.where('instagram_hashtag_id = ?', self.id)
-    end
-
     def update_photos
-      InstagramPhoto.get_hashtag_photos(self.hashtag, self.id)
+      InstagramPhoto.get_hashtag_photos(self)
     end
 
     def self.refresh_hashtag_photos
       InstagramHashtag.all.each do |instagram_hashtag|
-        InstagramPhoto.get_hashtag_photos(instagram_hashtag.hashtag, instagram_hashtag.id)
+        InstagramPhoto.get_hashtag_photos(instagram_hashtag)
       end
     end
   end

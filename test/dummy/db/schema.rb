@@ -32,9 +32,8 @@ ActiveRecord::Schema.define(:version => 20140609162826) do
     t.boolean "offensive",            :default => false
   end
 
+  add_index "social_instagram_photos", ["instagram_hashtag_id"], :name => "index_social_instagram_photos_on_instagram_hashtag_id"
   add_index "social_instagram_photos", ["offensive"], :name => "index_social_instagram_photos_on_offensive"
-  add_index "social_instagram_photos", ["photo_created_at"], :name => "index_social_instagram_photos_on_photo_created_at"
-  add_index "social_instagram_photos", ["photo_id"], :name => "index_social_instagram_photos_on_photo_id"
 
   create_table "social_tweets", :force => true do |t|
     t.text     "text"
