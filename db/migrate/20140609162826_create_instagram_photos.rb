@@ -7,6 +7,7 @@ class CreateInstagramPhotos < ActiveRecord::Migration
       t.text :photo_created_at
       t.integer :like_count
       t.integer :comment_count
+      t.integer :instagram_hashtag_id
       t.boolean :offensive, :default => false
     end
 

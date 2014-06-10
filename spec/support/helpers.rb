@@ -10,7 +10,12 @@ module Helpers
     stub_request(:get, "https://api.twitter.com/1.1/account/rate_limit_status.json").
       to_return(:status => 200, :body => fixture("twitter_rate_limit.json"), :headers => {})
 
-    stub_request(:get, "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=madebymade").
+    stub_request(:get, "https://api.twitter.com/1.1/statuses/user_timeline.json?include_rts=false&screen_name=madebymade").
       to_return(:status => 200, :body => fixture("twitter_tweets.json"), :headers => {})
+  end
+
+  def stub_instagram_api
+    stub_request(:get, "https://api.instagram.com/v1/tags/ryvita/media/recent.json?client_id=").
+      to_return(:status => 200, :body => fixture("instagram_photos.json"), :headers => {})
   end
 end

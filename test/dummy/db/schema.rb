@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125144252) do
+ActiveRecord::Schema.define(:version => 20140609162826) do
+
+  create_table "social_instagram_hashtags", :force => true do |t|
+    t.string   "hashtag"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "social_instagram_hashtags", ["hashtag"], :name => "index_social_instagram_hashtags_on_hashtag"
+
+  create_table "social_instagram_photos", :force => true do |t|
+    t.text    "photo_id"
+    t.text    "link"
+    t.text    "image_url"
+    t.text    "photo_created_at"
+    t.integer "like_count"
+    t.integer "comment_count"
+    t.integer "instagram_hashtag_id"
+    t.boolean "offensive",            :default => false
+  end
+
+  add_index "social_instagram_photos", ["offensive"], :name => "index_social_instagram_photos_on_offensive"
+  add_index "social_instagram_photos", ["photo_created_at"], :name => "index_social_instagram_photos_on_photo_created_at"
+  add_index "social_instagram_photos", ["photo_id"], :name => "index_social_instagram_photos_on_photo_id"
 
   create_table "social_tweets", :force => true do |t|
     t.text     "text"

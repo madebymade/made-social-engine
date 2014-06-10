@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :hashtag, class: Social::InstagramHashtag do
+  factory :instagram_hashtag, class: Social::InstagramHashtag do
     hashtag 'ryvita'
   end
 end

@@ -20,6 +20,12 @@ module Social
   mattr_accessor :twitter_access_secret
   @@twitter_access_secret = ''
 
+  mattr_accessor :instagram_client_id
+  @@instagram_client_id = ''
+
+  mattr_accessor :instagram_client_secret
+  @@instagram_client_secret = ''
+
   class Engine < Rails::Engine
     isolate_namespace Social
 
