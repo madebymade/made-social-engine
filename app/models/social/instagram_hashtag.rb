@@ -19,8 +19,8 @@ module Social
     end
 
     def self.refresh_hashtag_photos
-      InstagramHashtag.all.each do |instgram_hashtag|
-        InstagramHashtag.update_photos(instgram_hashtag.hashtag, hashtag.id)
+      InstagramHashtag.all.each do |instagram_hashtag|
+        InstagramPhoto.get_hashtag_photos(instagram_hashtag.hashtag, instagram_hashtag.id)
       end
     end
   end
