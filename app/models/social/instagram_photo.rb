@@ -52,6 +52,5 @@ module Social
     def self.get_unoffensive
       where(:offensive => false)
     end
-
   end
 end
