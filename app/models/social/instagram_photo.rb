@@ -5,6 +5,7 @@ module Social
     attr_accessible           :photo_id,
                               :link,
                               :image_url,
+                              :hi_res_image_url,
                               :photo_created_at,
                               :like_count,
                               :comment_count,
@@ -35,6 +36,7 @@ module Social
           :comment_count        => photo.comments["count"],
           :photo_id             => photo.id,
           :image_url            => photo.images.low_resolution.url,
+          :hi_res_image_url     => photo.images.standard_resolution.url,
           :like_count           => photo.likes["count"],
           :photo_created_at     => Time.at(Integer(photo.created_time)),
           :link                 => photo.link
