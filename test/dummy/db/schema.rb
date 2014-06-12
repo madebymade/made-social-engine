@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140610175509) do
+ActiveRecord::Schema.define(:version => 20140612090858) do
 
   create_table "social_instagram_hashtags", :force => true do |t|
     t.string   "hashtag"
@@ -50,8 +50,10 @@ ActiveRecord::Schema.define(:version => 20140610175509) do
 
   create_table "social_twitter_users", :force => true do |t|
     t.string   "username"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "display_name"
+    t.string   "avatar_url"
   end
 
   add_index "social_twitter_users", ["username"], :name => "index_social_twitter_users_on_username"

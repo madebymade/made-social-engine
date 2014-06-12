@@ -12,6 +12,12 @@ module Helpers
 
     stub_request(:get, "https://api.twitter.com/1.1/statuses/user_timeline.json?include_rts=false&screen_name=madebymade").
       to_return(:status => 200, :body => fixture("twitter_tweets.json"), :headers => {})
+
+    stub_request(:get, "https://api.twitter.com/1.1/users/show.json?screen_name=madebymade?client_id=").
+      to_return(:status => 200, :body => fixture("twitter_user.json"), :headers => {})
+
+    stub_request(:get, "https://api.twitter.com/1.1/users/show.json?screen_name=madebymade").
+      to_return(:status => 200, :body => fixture("twitter_user.json"), :headers => {})
   end
 
   def stub_instagram_api

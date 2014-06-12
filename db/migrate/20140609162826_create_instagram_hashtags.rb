@@ -8,8 +8,8 @@ class CreateInstagramHashtags < ActiveRecord::Migration
 
     add_index :social_instagram_hashtags, :hashtag
 
-    Social::InstagramHashtag.create!(
-      :hashtag => 'ryvita'
-    )
+    # Social::InstagramHashtag.create!(
+    #   :hashtag => 'ryvita'
+    # )
   end
 end
