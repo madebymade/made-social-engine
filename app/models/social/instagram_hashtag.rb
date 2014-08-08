@@ -21,5 +21,9 @@ module Social
         InstagramPhoto.get_hashtag_photos(instagram_hashtag)
       end
     end
+
+    def to_s
+      self.hashtag
+    end
   end
 end
