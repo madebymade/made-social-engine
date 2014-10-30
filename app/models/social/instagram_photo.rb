@@ -32,7 +32,7 @@ module Social
       end
 
       Instagram.tag_recent_media(instagram_hashtag.hashtag).each do |photo|
-        instagram_hashtag.photos.find_or_create_by_photo_id(
+        instagram_photo = instagram_hashtag.photos.find_or_create_by_photo_id(
           :comment_count        => photo.comments["count"],
           :photo_id             => photo.id,
           :image_url            => photo.images.low_resolution.url,
@@ -42,11 +42,15 @@ module Social
           :link                 => photo.link
         )
       end
+
       delete_old_instagram_photos(instagram_hashtag)
     end
 
     def self.delete_old_instagram_photos(hashtag)
-      hashtag.photos.offset(20).destroy_all
+      keep_photos = Social.config.instagram_display_count + 10
+
+      hashtag.photos.where(:offensive => true).offset(keep_photos).destroy_all
+      hashtag.photos.where(:offensive => false).offset(keep_photos).destroy_all
     end
 
     def self.get_unoffensive
