@@ -21,7 +21,12 @@ module Social
     end
 
     def get_info
-      @graph.get_object(self.url)
+      begin
+        @graph.get_object(self.url)
+      rescue Exception => e
+        Rails.logger.error("Facebook API error: #{e}")
+        false
+      end
     end
 
     private
