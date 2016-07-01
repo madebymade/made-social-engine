@@ -7,9 +7,5 @@ class CreateTwitterUsers < ActiveRecord::Migration
     end
 
     add_index :social_twitter_users, :username
-
-    # Social::TwitterUser.create!(
-    #   :username => 'JordansCereals'
-    # )
   end
 end

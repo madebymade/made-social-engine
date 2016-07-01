@@ -30,6 +30,9 @@ module Social
   mattr_accessor :instagram_client_secret
   @@instagram_client_secret = ''
 
+  mattr_accessor :instagram_access_token
+  @@instagram_access_token = ''
+
   class Engine < Rails::Engine
     isolate_namespace Social
 
